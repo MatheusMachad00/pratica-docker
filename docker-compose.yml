@@ -1,0 +1,11 @@
+services:
+  db_postgres_students:
+    image: postgres
+    container_name: db_postgres_students_CI_CD
+    restart: always
+    ports:
+      - 1234:5432
+    env_file:
+      - .env
+    volumes:
+      - pg_students:/var/lib/postgresql/data
